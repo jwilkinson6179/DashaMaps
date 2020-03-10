@@ -41,7 +41,7 @@ public class DashaMapThreeTest
     public void addThree()
     {
         Integer expected = 20;
-        Long expectedSize = 5l;
+        Long expectedSize = 5L;
         String testKey = "artichoke";
         test.set(testKey, 20);
         test.set("apple", 30);
@@ -52,6 +52,27 @@ public class DashaMapThreeTest
         Long actualSize = test.size();
 
         assertEquals(expected, actual);
+        assertEquals(expectedSize, actualSize);
+    }
+
+    @Test
+    public void bucketTests()
+    {
+        Long expectedSize = 7L;
+        Integer expectedBucketSize = 1;
+
+        test.set("antipasta", 20);
+        test.set("apple", 30);
+        test.set("avacado", 10);
+        test.set("bacon", 100);
+        test.set("banana", 200);
+        test.set("falafel", 346);
+        test.set("potato", 65);
+
+        Integer actualBucketSize = test.bucketSize("antipasta");
+        Long actualSize = test.size();
+
+        assertEquals(expectedBucketSize, actualBucketSize);
         assertEquals(expectedSize, actualSize);
     }
 

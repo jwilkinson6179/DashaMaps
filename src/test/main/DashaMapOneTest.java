@@ -103,4 +103,25 @@ public class DashaMapOneTest
 
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void bucketTests()
+    {
+        Long expectedSize = 7L;
+        Integer expectedBucketSize = 3;
+
+        test.set("antipasta", 20);
+        test.set("apple", 30);
+        test.set("avacado", 10);
+        test.set("bacon", 100);
+        test.set("banana", 200);
+        test.set("falafel", 346);
+        test.set("potato", 65);
+
+        Integer actualBucketSize = test.bucketSize("antipasta");
+        Long actualSize = test.size();
+
+        assertEquals(expectedBucketSize, actualBucketSize);
+        assertEquals(expectedSize, actualSize);
+    }
 }
