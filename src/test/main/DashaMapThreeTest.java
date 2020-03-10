@@ -56,27 +56,6 @@ public class DashaMapThreeTest
     }
 
     @Test
-    public void bucketTests()
-    {
-        Long expectedSize = 7L;
-        Integer expectedBucketSize = 1;
-
-        test.set("antipasta", 20);
-        test.set("apple", 30);
-        test.set("avacado", 10);
-        test.set("bacon", 100);
-        test.set("banana", 200);
-        test.set("falafel", 346);
-        test.set("potato", 65);
-
-        Integer actualBucketSize = test.bucketSize("antipasta");
-        Long actualSize = test.size();
-
-        assertEquals(expectedBucketSize, actualBucketSize);
-        assertEquals(expectedSize, actualSize);
-    }
-
-    @Test
     public void emptyTestOne()
     {
         assertTrue(test.isEmpty());
@@ -123,5 +102,27 @@ public class DashaMapThreeTest
         Integer actual = test.get(value);
 
         assertEquals(expected, actual);
+    }
+
+    @Test
+    public void bucketTests()
+    {
+        Long expectedSize = 8L;
+        Integer expectedBucketSize = 1;
+
+        test.set("antipasta", 20);
+        test.set("apple", 30);
+        test.set("avacado", 10);
+        test.set("bacon", 100);
+        test.set("banana", 200);
+        test.set("falafel", 346);
+        test.set("potato", 65);
+        test.set("onion", -5);
+
+        Integer actualBucketSize = test.bucketSize("antipasta");
+        Long actualSize = test.size();
+
+        assertEquals(expectedBucketSize, actualBucketSize);
+        assertEquals(expectedSize, actualSize);
     }
 }
