@@ -9,11 +9,15 @@ public class DashaMapTwo extends DashaMap
 
     protected Integer hashFunction(String input)
     {
-        if (input.length() > 0)
+        if (input.length() > 1)
         {
             input = input.toLowerCase();
             return input.charAt(1) - 97;
         }
-        return null;
+        else
+        {
+            input = input.toLowerCase();
+            return input.charAt(0) - 97;
+        }
     }
 }

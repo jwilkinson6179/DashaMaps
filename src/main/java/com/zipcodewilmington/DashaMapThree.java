@@ -14,6 +14,11 @@ public class DashaMapThree extends DashaMap
             input = input.toLowerCase();
             return (input.charAt(0) + input.charAt(1) - 97) % 26;
         }
-        return null;
+        else
+        {
+            input = input.toLowerCase();
+            return (input.charAt(0) - 97) % 26;
+
+        }
     }
 }

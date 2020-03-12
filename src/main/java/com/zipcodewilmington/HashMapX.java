@@ -8,6 +8,5 @@ public interface HashMapX
     public Boolean isEmpty();
     public Long size();
 
-
     public Integer bucketSize(String key);
 }
