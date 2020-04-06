@@ -1,8 +1,5 @@
-import com.zipcodewilmington.DashaMapOne;
-import com.zipcodewilmington.DashaMapThree;
-import com.zipcodewilmington.DashaMapTwo;
-import com.zipcodewilmington.FileIO;
-import org.junit.Assert;
+package com.zipcodewilmington;
+
 import org.junit.Before;
 import org.junit.Test;
 
